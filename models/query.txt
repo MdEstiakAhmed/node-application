@@ -1,0 +1,6 @@
+create user_details table:
+CREATE TABLE `node_application`.`user_details` ( `id` INT(3) NOT NULL AUTO_INCREMENT , `username` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(50) NOT NULL , `type` VARCHAR(10) NOT NULL , `phone_number` VARCHAR(20) NULL , `gender` VARCHAR(10) NOT NULL , `birthdate` VARCHAR(30) NULL , `biography` VARCHAR(100) NULL , `profile_picture` VARCHAR(50) NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+insert into user_details table:
+INSERT INTO `user_details` (`id`, `username`, `email`, `password`, `type`, `phone_number`, `gender`, `birthdate`, `biography`, `profile_picture`) VALUES ('100', 'admin', 'admin@gmail.com', 'admin', 'admin', '01700112233', 'male', NULL, NULL, NULL);
+

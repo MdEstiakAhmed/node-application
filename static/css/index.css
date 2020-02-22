@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    padding: 20px 50px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1-2{
+    flex-basis: 50%;
+}
+nav{
+    background-color: black;
+    font-size: 30px;
+}
+
+.menu{
+    text-align: end;
+}
+
+.menu-link{
+    color: white;
+}
+
+.menu a{
+    padding: 0 20px;
+}
