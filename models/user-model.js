@@ -22,9 +22,8 @@ module.exports= {
 		});
 	},
 	validate: function(user, callback){
-		var sql ="SELECT * FROM user_details where email='"+user.email+"' and password='"+user.password+"'";
-		db.getResults(sql, function(results){
-
+		var sql ="SELECT * FROM user_details where email=? and password=?";
+		db.getResults(sql, [user.email, user.password], function(results){
 			if(results.length > 0){
 				callback(true);
 			}else{
@@ -32,9 +31,9 @@ module.exports= {
 			}
 		});
 	},
-	getByUname : function(email, callback){
-		var sql = "select * from user_details where email='"+email+"'";
-		db.getResults(sql, function(results){
+	getByEmail : function(email, callback){
+		var sql = "select * from user_details where email=?";
+		db.getResults(sql, [email], function(results){
 			if(results.length > 0){
 				callback(results[0]);
 			}else{
@@ -43,8 +42,8 @@ module.exports= {
 		});
 	},
 	insert: function(user, callback){
-		var sql = "insert into user .............";
-		db.getResults(sql, function(status){
+		var sql = "INSERT INTO user_details(username, email, password, type, phone_number, gender, birthdate, biography, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		db.execute(sql, [user.username, user.email, user.password, user.type, user.phone_number, user.gender, user.birthdate, user.biography, user.profile_picture], function(status){
 			if(status){
 				callback(true);
 			}else{
@@ -53,8 +52,8 @@ module.exports= {
 		});
 	},
 	update : function(user, callback){
-		var sql = "update user set username='"+user.username+"', password='"+user.password+"', type='"+user.type+"' where id="+user.id;
-		db.getResults(sql, function(status){
+		var sql = "update user_details set username=?, password=?, phone_number=? where email=?";
+		db.execute(sql, [user.username, user.password, user.phone, user.email], function(status){
 			if(status){
 				callback(true);
 			}else{
@@ -63,8 +62,9 @@ module.exports= {
 		});
 	},
 	delete : function(user, callback){
-		var sql = "Delete user  where id="+user.id;
-		db.getResults(sql, function(status){
+
+		var sql = "Delete from user_details where email=?";
+		db.execute(sql, [user.email], function(status){
 			if(status){
 				callback(true);
 			}else{

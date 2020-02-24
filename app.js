@@ -10,6 +10,7 @@ var logout = require('./controllers/generalController/logout');
 var login = require('./controllers/generalController/login');
 var signup = require('./controllers/generalController/signup');
 var home = require('./controllers/userController/home');
+var update = require('./controllers/generalController/update');
 
 //configuration
 app.set('view engine', 'ejs');
@@ -28,6 +29,8 @@ app.use('/generalViews', login);    //for signup to login
 app.use('/generalViews', signup);   //for login to signup
 app.use('/generalViews/login', login);  //for login form submit to login.js
 app.use('/userViews/home', home);
+app.use('/userViews', update);
+app.use('/userViews', home);
 
 //server startup
 var serverPort=3000;

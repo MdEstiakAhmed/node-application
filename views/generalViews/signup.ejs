@@ -9,5 +9,57 @@
     <h1>user login</h1>
     <a href="/">landing page</a>
     <a href="/generalViews/login">login</a>
+    <br><br><br>
+    
+    <form method="post">
+        <table>
+            <tr>
+                <td>username:</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>type:</td>
+                <td><input type="text" readonly name="type" value="user"></td>
+            </tr>
+            <tr>
+                <td>phone_number</td>
+                <td><input type="text" name="phone_number"></td>
+            </tr>
+            <tr>
+                <td>gender:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>birthdate:</td>
+                <td><input type="date" id="birthdate" name="birthdate"></td>
+            </tr>
+            <tr>
+                <td>biography: (optional)</td>
+                <td><input type="text" name="biography"></td>
+            </tr>
+            <tr>
+                <td>profile_picture: (optional)</td>
+                <td><input type="text" name="profile_picture"></td>
+            </tr>
+            <tr>
+				<td></td>
+				<td><input type="submit" name="signup" value="signup"></td>
+			</tr>
+        </table>
+    </form>
+
 </body>
 </html>
